@@ -7,7 +7,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>NiuNiu</title>
+  <title>数组的各种复杂使用 | NiuNiu</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,17 +15,17 @@
     <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript">
   
 
-  <meta name="description" content="title:数组的各种复杂使用map方法可以方便的迭代数组，例子：123var timesFour = oldArray.map(function(val)&amp;#123;  return val * 4;&amp;#125;); map方法会迭代数组中的每一个元素，并根据回调函数来处理每一个元素，最后返回一个新数组。注意，这个方法不会改变原始数组。  reduce方法用来迭代一个数组，并且把它累计到一个值">
+  <meta name="description" content="map方法可以方便的迭代数组，例子：123var timesFour = oldArray.map(function(val)&amp;#123;  return val * 4;&amp;#125;); map方法会迭代数组中的每一个元素，并根据回调函数来处理每一个元素，最后返回一个新数组。注意，这个方法不会改变原始数组。  reduce方法用来迭代一个数组，并且把它累计到一个值中。使用reduce方法时，你要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NiuNiu">
+<meta property="og:title" content="数组的各种复杂使用">
 <meta property="og:url" content="https://niuzhiwei.github.io/2018/11/09/Untitled Document (2)/index.html">
 <meta property="og:site_name" content="NiuNiu">
-<meta property="og:description" content="title:数组的各种复杂使用map方法可以方便的迭代数组，例子：123var timesFour = oldArray.map(function(val)&amp;#123;  return val * 4;&amp;#125;); map方法会迭代数组中的每一个元素，并根据回调函数来处理每一个元素，最后返回一个新数组。注意，这个方法不会改变原始数组。  reduce方法用来迭代一个数组，并且把它累计到一个值">
+<meta property="og:description" content="map方法可以方便的迭代数组，例子：123var timesFour = oldArray.map(function(val)&amp;#123;  return val * 4;&amp;#125;); map方法会迭代数组中的每一个元素，并根据回调函数来处理每一个元素，最后返回一个新数组。注意，这个方法不会改变原始数组。  reduce方法用来迭代一个数组，并且把它累计到一个值中。使用reduce方法时，你要">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-09T07:30:19.363Z">
+<meta property="og:updated_time" content="2018-11-10T14:26:59.009Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NiuNiu">
-<meta name="twitter:description" content="title:数组的各种复杂使用map方法可以方便的迭代数组，例子：123var timesFour = oldArray.map(function(val)&amp;#123;  return val * 4;&amp;#125;); map方法会迭代数组中的每一个元素，并根据回调函数来处理每一个元素，最后返回一个新数组。注意，这个方法不会改变原始数组。  reduce方法用来迭代一个数组，并且把它累计到一个值">
+<meta name="twitter:title" content="数组的各种复杂使用">
+<meta name="twitter:description" content="map方法可以方便的迭代数组，例子：123var timesFour = oldArray.map(function(val)&amp;#123;  return val * 4;&amp;#125;); map方法会迭代数组中的每一个元素，并根据回调函数来处理每一个元素，最后返回一个新数组。注意，这个方法不会改变原始数组。  reduce方法用来迭代一个数组，并且把它累计到一个值中。使用reduce方法时，你要">
 
   
 
@@ -145,17 +145,12 @@
 </div>
 
 
-  <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-数组的各种复杂使用"><span class="toc-text">title:数组的各种复杂使用</span></a></li></ol>
-  </div>
-
 
 
 <div class="content content-post CENTER">
    <article id="post-Untitled Document (2)" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">(no title)</h1>
+    <h1 class="post-title">数组的各种复杂使用</h1>
 
     <div class="article-meta">
       <span>
@@ -193,8 +188,7 @@
 
   <div class="article-content">
     
-      <hr>
-<h2 id="title-数组的各种复杂使用"><a href="#title-数组的各种复杂使用" class="headerlink" title="title:数组的各种复杂使用"></a>title:数组的各种复杂使用</h2><p><code>map</code>方法可以方便的迭代数组，例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var timesFour = oldArray.map(function(val)&#123;</span><br><span class="line">  return val * 4;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+      <p><code>map</code>方法可以方便的迭代数组，例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var timesFour = oldArray.map(function(val)&#123;</span><br><span class="line">  return val * 4;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>map方法会迭代数组中的每一个元素，并根据回调函数来处理每一个元素，最后返回一个新数组。注意，这个方法不会改变原始数组。</p>
 <hr>
 <p><code>reduce</code>方法用来迭代一个数组，并且把它累计到一个值中。<br>使用reduce方法时，你要传入一个回调函数，这个回调函数的参数是<strong>一个累加器和当前值</strong>。<br>reduce方法有一个<strong>可选的第二参数</strong>，它可以被用来设置累加器的初始值。如果没有定义这一初始值，<strong>那么初始值将变为数组中的第一项，而currentVal将从数组的第二项开始</strong>，下面的例子使用了reduce来让数组中的所有值相减：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var singleVal = array.reduce(function(previousVal, currentVal) &#123;</span><br><span class="line">  return previousVal - currentVal;</span><br><span class="line">&#125;, 0);</span><br></pre></td></tr></table></figure></p>
