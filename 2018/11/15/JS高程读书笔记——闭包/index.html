@@ -7,7 +7,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>freecodecamp中Everything Be True题目 | NiuNiu</title>
+  <title>JS高程读书笔记——闭包 | NiuNiu</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,17 +15,17 @@
     <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript">
   
 
-  <meta name="description" content="问题:所有的东西都是真的！完善编辑器中的every函数，如果集合(collection)中的所有对象都存在对应的属性(pre)，并且属性(pre)对应的值为真。函数返回ture。反之，返回false。记住：你只能通过中括号来访问对象的变量属性(pre)。提示：你可以有多种实现方式，最简洁的方式莫过于Array.prototype.every()。答案：12345678910function eve">
+  <meta name="description" content="闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数，例如：123456789101112131415function createFunction(propertyName)&amp;#123;	return function(object1,object2)&amp;#123;		var value1 = object1[propertyName];		var">
 <meta property="og:type" content="article">
-<meta property="og:title" content="freecodecamp中Everything Be True题目">
-<meta property="og:url" content="https://niuzhiwei.github.io/2018/11/14/freecodecamp中Everything Be True题目/index.html">
+<meta property="og:title" content="JS高程读书笔记——闭包">
+<meta property="og:url" content="https://niuzhiwei.github.io/2018/11/15/JS高程读书笔记——闭包/index.html">
 <meta property="og:site_name" content="NiuNiu">
-<meta property="og:description" content="问题:所有的东西都是真的！完善编辑器中的every函数，如果集合(collection)中的所有对象都存在对应的属性(pre)，并且属性(pre)对应的值为真。函数返回ture。反之，返回false。记住：你只能通过中括号来访问对象的变量属性(pre)。提示：你可以有多种实现方式，最简洁的方式莫过于Array.prototype.every()。答案：12345678910function eve">
+<meta property="og:description" content="闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数，例如：123456789101112131415function createFunction(propertyName)&amp;#123;	return function(object1,object2)&amp;#123;		var value1 = object1[propertyName];		var">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-14T11:53:03.987Z">
+<meta property="og:updated_time" content="2018-11-15T04:32:08.150Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="freecodecamp中Everything Be True题目">
-<meta name="twitter:description" content="问题:所有的东西都是真的！完善编辑器中的every函数，如果集合(collection)中的所有对象都存在对应的属性(pre)，并且属性(pre)对应的值为真。函数返回ture。反之，返回false。记住：你只能通过中括号来访问对象的变量属性(pre)。提示：你可以有多种实现方式，最简洁的方式莫过于Array.prototype.every()。答案：12345678910function eve">
+<meta name="twitter:title" content="JS高程读书笔记——闭包">
+<meta name="twitter:description" content="闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数，例如：123456789101112131415function createFunction(propertyName)&amp;#123;	return function(object1,object2)&amp;#123;		var value1 = object1[propertyName];		var">
 
   
 
@@ -148,14 +148,14 @@
 
 
 <div class="content content-post CENTER">
-   <article id="post-freecodecamp中Everything Be True题目" class="article article-type-post" itemprop="blogPost">
+   <article id="post-JS高程读书笔记——闭包" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">freecodecamp中Everything Be True题目</h1>
+    <h1 class="post-title">JS高程读书笔记——闭包</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2018.11.14</span>
+        <span>2018.11.15</span>
       </span>
 
       
@@ -171,7 +171,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="https://niuzhiwei.github.io/niuzhiwei.github.io/2018/11/14/freecodecamp中Everything Be True题目/#disqus_thread"></a>
+          <a href="https://niuzhiwei.github.io/niuzhiwei.github.io/2018/11/15/JS高程读书笔记——闭包/#disqus_thread"></a>
         </span>
       
 
@@ -188,7 +188,18 @@
 
   <div class="article-content">
     
-      <p>问题:<br>所有的东西都是真的！<br>完善编辑器中的every函数，如果集合(collection)中的所有对象都存在对应的属性(pre)，并且属性(pre)对应的值为真。函数返回ture。反之，返回false。<br>记住：你只能通过中括号来访问对象的变量属性(pre)。<br>提示：你可以有多种实现方式，最简洁的方式莫过于<code>Array.prototype.every()</code>。<br>答案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function every(collection, pre) &#123;</span><br><span class="line">  // Is everyone being true?</span><br><span class="line">  </span><br><span class="line">  function search(item)&#123;</span><br><span class="line">    return item[pre];</span><br><span class="line">  &#125;</span><br><span class="line">  return collection.every(search);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">every([&#123;&quot;user&quot;: &quot;Tinky-Winky&quot;, &quot;sex&quot;: &quot;male&quot;&#125;, &#123;&quot;user&quot;: &quot;Dipsy&quot;, &quot;sex&quot;: &quot;male&quot;&#125;, &#123;&quot;user&quot;: &quot;Laa-Laa&quot;, &quot;sex&quot;: &quot;female&quot;&#125;, &#123;&quot;user&quot;: &quot;Po&quot;, &quot;sex&quot;: &quot;female&quot;&#125;], &quot;sex&quot;);</span><br></pre></td></tr></table></figure></p>
+      <p><strong>闭包</strong>是指有权访问另一个函数作用域中的变量的函数。<br>创建闭包的常见方式，就是在一个函数内部创建另一个函数，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function createFunction(propertyName)&#123;</span><br><span class="line">	return function(object1,object2)&#123;</span><br><span class="line">		var value1 = object1[propertyName];</span><br><span class="line">		var value2 = object2[propertyName];</span><br><span class="line">		if(value1&lt;value2)&#123;</span><br><span class="line">			return -1;</span><br><span class="line">		&#125;</span><br><span class="line">		else if(value1 &gt; value2)&#123;</span><br><span class="line">			return 1;</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			return 0</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上方函数中，<code>var value1 = object1[propertyName];</code>    <code>var value2 = object2[propertyName];</code>这两行代码访问了外部函数中的变量<code>propertyName</code>。</p>
+<p>当某个函数被调用时，会创建一个执行环境以及相应的<strong>作用域链</strong>。然后使用arguments和其他命名参数的值来初始化函数的<strong>活动对象</strong>。但在作用域链中，外部函数的活动对象始终处于第二位，外部函数的外部函数的活动对象处于第三位，…直至作为作用域链终点的全局执行环境。</p>
+<p>在函数执行过程中，为读取和写入变量的值，就需要在作用域链中查找变量。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function conpare(val1,val2)&#123;</span><br><span class="line">	if(val1&lt;val2)&#123;</span><br><span class="line">		return -1;</span><br><span class="line">	&#125;</span><br><span class="line">	else if(val1 &gt; val2)&#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	else&#123;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var result = conpare(5,10)</span><br></pre></td></tr></table></figure></p>
+<p>以上代码先定义了<code>compare()</code>函数，然后又在全局作用域中调用了它。当第一个调用了<code>compare()</code>时，会创建一个包含<code>this,arguments,val1,val2</code>的活动对象。全局执行环境的变量对象（包含this、result和compare)在<code>compare</code>执行环境的作用域链中则处于第二位。</p>
+<p>后台的每个执行环境都有几个表示变量的对象——变量对象。全局环境的变量对象始终存在。而像<code>compare()</code>函数这样的局部环境的变量对象，则只在函数执行的过程中存在。</p>
+<p>在创建<code>compare()</code>函数时，会创建一个预先包含全局变量的作用域链，这个作用域链被保存在内部的<code>Scope</code>属性中。</p>
+<p>当调用<code>compare()</code>函数时，会被函数创建一个执行环境，然后通过复制函数的<code>Scope</code>属性中的对象构建起执行环境的作用域链。此后，又有一个活动对象被创建并被推入执行环境作用域链的前端，对于这个例子中<code>compare()</code>函数的执行环境而言，起作用域链中包含两个变量对象：本地活动对象和全局变量对象。</p>
+<p>显然，作用域链本质上是一个指向变量对象的指针列表，它只引用但不实际包含变量对象。</p>
+<p>无论什么时候在函数中访问一个变量时，就会从作用域链中搜索具有相应名字的变量。一般来讲，当函数执行完毕后，局部活动对象就会被销毁，内存中仅保存全局作用域。<strong>但是，闭包的情况又有所不同</strong>。</p>
+<hr>
+<p>在另一个函数内部定义的函数会将包含函数（也就是外部函数）的活动对象添加到它的作用域链中，例如上方的<code>createFunction</code>函数中，在匿名函数从<code>createFunction</code>中被返回后，它的作用域链被初始化为包含<code>createFunction</code>函数的活动对象和全局变量对象。这样，匿名函数就可以访问在<code>createFunction</code>中定义的所有变量。<br>更为重要的是，<code>createFunction</code>函数在执行完毕后，其活动对象也不会被销毁，<strong>因为匿名函数的作用域链仍在引用这个活动对象</strong>，换句话说，当<code>createFunction</code>函数被返回后，其执行函数的作用域链会被销毁，但它的活动对象仍会留在内存中，直到匿名函数被销毁后，<code>createFunction</code>的活动对象才会被销毁。</p>
 
     
   </div>
@@ -226,10 +237,10 @@
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/niuzhiwei.github.io/2018/11/14/freecodecamp中Binary Agents题目/">
+    <a class="show pull-left" href="/niuzhiwei.github.io/2018/11/15/JS高程读书笔记——函数表达式（1）/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/niuzhiwei.github.io/2018/11/15/JS高程读书笔记——函数表达式（1）/">
+    <a class="show pull-right" href="/niuzhiwei.github.io/2018/11/15/JS高程读书笔记——闭包与变量/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -323,7 +334,7 @@
   <script>
     var disqus_shortname = 'forsigner';
     
-    var disqus_url = 'https://niuzhiwei.github.io/2018/11/14/freecodecamp中Everything Be True题目/';
+    var disqus_url = 'https://niuzhiwei.github.io/2018/11/15/JS高程读书笔记——闭包/';
     
     (function(){
       var dsq = document.createElement('script');

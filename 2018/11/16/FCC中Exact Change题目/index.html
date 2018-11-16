@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>FCC中Exact Change题目 | NiuNiu</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript">
+  
+
+  <meta name="description" content="题目：设计一个收银程序 checkCashRegister() ，其把购买价格(price)作为第一个参数 , 付款金额 (cash)作为第二个参数, 和收银机中零钱(cid) 作为第三个参数. cid是一个二维数组，存着当前可用的找零. 当收银机中的钱不够找零时返回字符串 &amp;quot;Insufficient Funds&amp;quot;. 如果正好则返回字符串&amp;quot;Closed&amp;quot;.这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FCC中Exact Change题目">
+<meta property="og:url" content="https://niuzhiwei.github.io/2018/11/16/FCC中Exact Change题目/index.html">
+<meta property="og:site_name" content="NiuNiu">
+<meta property="og:description" content="题目：设计一个收银程序 checkCashRegister() ，其把购买价格(price)作为第一个参数 , 付款金额 (cash)作为第二个参数, 和收银机中零钱(cid) 作为第三个参数. cid是一个二维数组，存着当前可用的找零. 当收银机中的钱不够找零时返回字符串 &amp;quot;Insufficient Funds&amp;quot;. 如果正好则返回字符串&amp;quot;Closed&amp;quot;.这">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-16T01:49:23.469Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FCC中Exact Change题目">
+<meta name="twitter:description" content="题目：设计一个收银程序 checkCashRegister() ，其把购买价格(price)作为第一个参数 , 付款金额 (cash)作为第二个参数, 和收银机中零钱(cid) 作为第三个参数. cid是一个二维数组，存着当前可用的找零. 当收银机中的钱不够找零时返回字符串 &amp;quot;Insufficient Funds&amp;quot;. 如果正好则返回字符串&amp;quot;Closed&amp;quot;.这">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/niuzhiwei.github.io/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-FCC中Exact Change题目" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">FCC中Exact Change题目</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.11.16</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>niuzhiwei</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://niuzhiwei.github.io/niuzhiwei.github.io/2018/11/16/FCC中Exact Change题目/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>题目：设计一个收银程序 <code>checkCashRegister()</code> ，其把购买价格<code>(price)</code>作为第一个参数 , 付款金额 <code>(cash)</code>作为第二个参数, 和收银机中零钱<code>(cid)</code> 作为第三个参数.</p>
+<p><code>cid</code>是一个二维数组，存着当前可用的找零.</p>
+<p>当收银机中的钱不够找零时返回字符串 <code>&quot;Insufficient Funds&quot;</code>. 如果正好则返回字符串<code>&quot;Closed&quot;.</code><br><strong>这个题的难点…个人觉得是各个零钱的币值…困扰我好久…</strong><br>答案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">function checkCashRegister(price, cash, cid) &#123;</span><br><span class="line">  cash*=100;</span><br><span class="line">  price*=100;</span><br><span class="line">  function totalCid(arr)&#123;</span><br><span class="line">  	var sum=0;</span><br><span class="line">  	for(var i=0;i&lt;arr.length;i++)&#123;</span><br><span class="line">  		sum+=arr[i][1]*100;</span><br><span class="line">  	&#125;</span><br><span class="line">  	return sum;</span><br><span class="line">  &#125;</span><br><span class="line">  function trans(coin)&#123;</span><br><span class="line">  	switch(coin)&#123;</span><br><span class="line">  		case &quot;PENNY&quot;:return 1;</span><br><span class="line">  		case &quot;NICKEL&quot;:return 5;</span><br><span class="line">  		case &quot;DIME&quot;:return 10;</span><br><span class="line">  		case &quot;QUARTER&quot;:return 25;</span><br><span class="line">  		case &quot;ONE&quot;:return 100;</span><br><span class="line">  		case &quot;FIVE&quot;:return 500;</span><br><span class="line">  		case &quot;TEN&quot;:return 1000;</span><br><span class="line">  		case &quot;TWENTY&quot;:return 2000;</span><br><span class="line">  		case &quot;ONE HUNDRED&quot;:return 10000;</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  var change=cash-price;</span><br><span class="line">  var totalCash=totalCid(cid);</span><br><span class="line">  var result = [];</span><br><span class="line">  if(totalCash&lt;change)&#123;                           </span><br><span class="line">      return &quot;Insufficient Funds&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  else if(totalCash===change)&#123;                    </span><br><span class="line">      return &quot;Closed&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  if(totalCash&gt;change)&#123;</span><br><span class="line">  	for(var i=cid.length-1;i&gt;=0;i--)&#123;</span><br><span class="line">  		var a=trans(cid[i][0]);</span><br><span class="line">  		var b=Math.floor(change/a);</span><br><span class="line">  		var c=Math.floor(cid[i][1]*100/a);</span><br><span class="line">  		var d=Math.min(c,b);</span><br><span class="line">  		if(d!==0)&#123;</span><br><span class="line">  			result.push([cid[i][0],d*a/100]);</span><br><span class="line">  			change=change-d*a;</span><br><span class="line">  		&#125;</span><br><span class="line">  	&#125;</span><br><span class="line">  	if(change===0)&#123;</span><br><span class="line">  		return result;</span><br><span class="line">  	&#125;</span><br><span class="line">  	else&#123;</span><br><span class="line">        return &quot;Insufficient Funds&quot;;</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Example cash-in-drawer array:</span><br><span class="line">// [[&quot;PENNY&quot;, 1.01],</span><br><span class="line">// [&quot;NICKEL&quot;, 2.05],</span><br><span class="line">// [&quot;DIME&quot;, 3.10],</span><br><span class="line">// [&quot;QUARTER&quot;, 4.25],</span><br><span class="line">// [&quot;ONE&quot;, 90.00],</span><br><span class="line">// [&quot;FIVE&quot;, 55.00],</span><br><span class="line">// [&quot;TEN&quot;, 20.00],</span><br><span class="line">// [&quot;TWENTY&quot;, 60.00],</span><br><span class="line">// [&quot;ONE HUNDRED&quot;, 100.00]]</span><br><span class="line"></span><br><span class="line">checkCashRegister(19.50, 20.00, [[&quot;PENNY&quot;, 1.01], [&quot;NICKEL&quot;, 2.05], [&quot;DIME&quot;, 3.10], [&quot;QUARTER&quot;, 4.25], [&quot;ONE&quot;, 90.00], [&quot;FIVE&quot;, 55.00], [&quot;TEN&quot;, 20.00], [&quot;TWENTY&quot;, 60.00], [&quot;ONE HUNDRED&quot;, 100.00]]);</span><br></pre></td></tr></table></figure></p>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/niuzhiwei.github.io/2018/11/15/FCC中对等差分题目&&lastIndexOf()/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/niuzhiwei.github.io/2018/11/16/FCC中Inventory Update题目/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'https://niuzhiwei.github.io/2018/11/16/FCC中Exact Change题目/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

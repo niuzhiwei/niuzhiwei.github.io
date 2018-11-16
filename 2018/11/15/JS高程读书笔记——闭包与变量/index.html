@@ -7,7 +7,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>freecodecamp中Everything Be True题目 | NiuNiu</title>
+  <title>JS高程读书笔记——闭包与变量 | NiuNiu</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,17 +15,17 @@
     <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript">
   
 
-  <meta name="description" content="问题:所有的东西都是真的！完善编辑器中的every函数，如果集合(collection)中的所有对象都存在对应的属性(pre)，并且属性(pre)对应的值为真。函数返回ture。反之，返回false。记住：你只能通过中括号来访问对象的变量属性(pre)。提示：你可以有多种实现方式，最简洁的方式莫过于Array.prototype.every()。答案：12345678910function eve">
+  <meta name="description" content="接上一节文章——闭包中的内容，作用域链的配置机制引入了一个值得注意的副作用，即闭包只能取得包含函数中任何变量的最后一个值，别忘了闭包所保存的是整个变量对象，而不是猴哥特殊的变量。举个栗子说明：123456789function createFunctions()&amp;#123;	var result = new Array();	for(var i=0;i&amp;lt;10;i++)&amp;#123;		resu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="freecodecamp中Everything Be True题目">
-<meta property="og:url" content="https://niuzhiwei.github.io/2018/11/14/freecodecamp中Everything Be True题目/index.html">
+<meta property="og:title" content="JS高程读书笔记——闭包与变量">
+<meta property="og:url" content="https://niuzhiwei.github.io/2018/11/15/JS高程读书笔记——闭包与变量/index.html">
 <meta property="og:site_name" content="NiuNiu">
-<meta property="og:description" content="问题:所有的东西都是真的！完善编辑器中的every函数，如果集合(collection)中的所有对象都存在对应的属性(pre)，并且属性(pre)对应的值为真。函数返回ture。反之，返回false。记住：你只能通过中括号来访问对象的变量属性(pre)。提示：你可以有多种实现方式，最简洁的方式莫过于Array.prototype.every()。答案：12345678910function eve">
+<meta property="og:description" content="接上一节文章——闭包中的内容，作用域链的配置机制引入了一个值得注意的副作用，即闭包只能取得包含函数中任何变量的最后一个值，别忘了闭包所保存的是整个变量对象，而不是猴哥特殊的变量。举个栗子说明：123456789function createFunctions()&amp;#123;	var result = new Array();	for(var i=0;i&amp;lt;10;i++)&amp;#123;		resu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-14T11:53:03.987Z">
+<meta property="og:updated_time" content="2018-11-15T07:17:20.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="freecodecamp中Everything Be True题目">
-<meta name="twitter:description" content="问题:所有的东西都是真的！完善编辑器中的every函数，如果集合(collection)中的所有对象都存在对应的属性(pre)，并且属性(pre)对应的值为真。函数返回ture。反之，返回false。记住：你只能通过中括号来访问对象的变量属性(pre)。提示：你可以有多种实现方式，最简洁的方式莫过于Array.prototype.every()。答案：12345678910function eve">
+<meta name="twitter:title" content="JS高程读书笔记——闭包与变量">
+<meta name="twitter:description" content="接上一节文章——闭包中的内容，作用域链的配置机制引入了一个值得注意的副作用，即闭包只能取得包含函数中任何变量的最后一个值，别忘了闭包所保存的是整个变量对象，而不是猴哥特殊的变量。举个栗子说明：123456789function createFunctions()&amp;#123;	var result = new Array();	for(var i=0;i&amp;lt;10;i++)&amp;#123;		resu">
 
   
 
@@ -148,14 +148,14 @@
 
 
 <div class="content content-post CENTER">
-   <article id="post-freecodecamp中Everything Be True题目" class="article article-type-post" itemprop="blogPost">
+   <article id="post-JS高程读书笔记——闭包与变量" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">freecodecamp中Everything Be True题目</h1>
+    <h1 class="post-title">JS高程读书笔记——闭包与变量</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2018.11.14</span>
+        <span>2018.11.15</span>
       </span>
 
       
@@ -171,7 +171,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="https://niuzhiwei.github.io/niuzhiwei.github.io/2018/11/14/freecodecamp中Everything Be True题目/#disqus_thread"></a>
+          <a href="https://niuzhiwei.github.io/niuzhiwei.github.io/2018/11/15/JS高程读书笔记——闭包与变量/#disqus_thread"></a>
         </span>
       
 
@@ -188,7 +188,8 @@
 
   <div class="article-content">
     
-      <p>问题:<br>所有的东西都是真的！<br>完善编辑器中的every函数，如果集合(collection)中的所有对象都存在对应的属性(pre)，并且属性(pre)对应的值为真。函数返回ture。反之，返回false。<br>记住：你只能通过中括号来访问对象的变量属性(pre)。<br>提示：你可以有多种实现方式，最简洁的方式莫过于<code>Array.prototype.every()</code>。<br>答案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function every(collection, pre) &#123;</span><br><span class="line">  // Is everyone being true?</span><br><span class="line">  </span><br><span class="line">  function search(item)&#123;</span><br><span class="line">    return item[pre];</span><br><span class="line">  &#125;</span><br><span class="line">  return collection.every(search);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">every([&#123;&quot;user&quot;: &quot;Tinky-Winky&quot;, &quot;sex&quot;: &quot;male&quot;&#125;, &#123;&quot;user&quot;: &quot;Dipsy&quot;, &quot;sex&quot;: &quot;male&quot;&#125;, &#123;&quot;user&quot;: &quot;Laa-Laa&quot;, &quot;sex&quot;: &quot;female&quot;&#125;, &#123;&quot;user&quot;: &quot;Po&quot;, &quot;sex&quot;: &quot;female&quot;&#125;], &quot;sex&quot;);</span><br></pre></td></tr></table></figure></p>
+      <p>接上一节文章——闭包中的内容，作用域链的配置机制引入了一个值得注意的副作用，<strong>即闭包只能取得包含函数中任何变量的最后一个值</strong>，别忘了闭包所保存的是整个变量对象，而不是猴哥特殊的变量。<br>举个栗子说明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function createFunctions()&#123;</span><br><span class="line">	var result = new Array();</span><br><span class="line">	for(var i=0;i&lt;10;i++)&#123;</span><br><span class="line">		result[i]  = function()&#123;</span><br><span class="line">			return i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个函数会返回一个函数数组。<br>表面上看，似乎每个函数都应该返回自己索引值，但实际上每个函数都返回10.因为每个函数的作用域链中都保存着<code>createFunctions()</code>函数的活动对象，所以他们引用的都是同一个变量i.当<code>createFunctions()</code>函数返回后，变量i的值是10.此时每个函数都引用这保存变量i的同一个变量对象。所以在每个函数内部i的值都是10。我们可以通过创建另一个函数强制让闭包的行为符合预期，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function createFunctions()&#123;</span><br><span class="line">	var result = new Array();</span><br><span class="line">	for(var i=0;i&lt;10;i++)&#123;</span><br><span class="line">		result[i]  = function(num)&#123;</span><br><span class="line">			return function()&#123;</span><br><span class="line">				return num</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;(i);</span><br><span class="line">	&#125;</span><br><span class="line">	return result;</span><br><span class="line">&#125;</span><br><span class="line">createFunctions()</span><br></pre></td></tr></table></figure></p>
 
     
   </div>
@@ -226,10 +227,10 @@
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/niuzhiwei.github.io/2018/11/14/freecodecamp中Binary Agents题目/">
+    <a class="show pull-left" href="/niuzhiwei.github.io/2018/11/15/JS高程读书笔记——闭包/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/niuzhiwei.github.io/2018/11/15/JS高程读书笔记——函数表达式（1）/">
+    <a class="show pull-right" href="/niuzhiwei.github.io/2018/11/15/FCC中Arguments Optional题目/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -323,7 +324,7 @@
   <script>
     var disqus_shortname = 'forsigner';
     
-    var disqus_url = 'https://niuzhiwei.github.io/2018/11/14/freecodecamp中Everything Be True题目/';
+    var disqus_url = 'https://niuzhiwei.github.io/2018/11/15/JS高程读书笔记——闭包与变量/';
     
     (function(){
       var dsq = document.createElement('script');
